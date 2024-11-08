@@ -5,6 +5,7 @@ using namespace std;
 void selectPokemon()
 {
     //logic to select pokemon
+    //i will apply logic in next lesson
 }
 
 
