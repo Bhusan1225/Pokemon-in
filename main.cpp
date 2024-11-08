@@ -1,6 +1,16 @@
 #include <iostream>
 using namespace std;
 
+
+void selectPokemon()
+{
+    //logic to select pokemon
+}
+
+
+
+
+
 int main() {
     string player_name;
 
