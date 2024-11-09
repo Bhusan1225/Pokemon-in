@@ -2,7 +2,8 @@
 using namespace std;
 
 
-int selectPokemon()
+//switch statement
+int firstPokemonSelectionS()
 {
     cout << "Hyyyyyyyyy.... I am Professor Oak.\n";
     cout << "You can choose one of the following Pokémon:\n";
@@ -13,26 +14,28 @@ int selectPokemon()
     cin >> choice;
 
 
-    if (choice == 1)
+    switch (choice)
     {
-        cout << "You choose Bulbasaur\n";
-    }
-    else if (choice == 2)
-    {
-        cout << " HMM, You choose Charmander\n";
-    }
-    else if (choice == 3)
-    {
-        cout << "WOW, You have a great choice,Squirtle";
-    }
-    else 
-    {
-        cout << "Sorry, there are only 3 options\nTry again...";
-    }
+    case 1:
+        cout << "Professor Oak: A fiery choice! Charmander is yours!\n";
+        break;
 
-    return 0;
+    case 2:
+        cout << "Professor Oak: A fine choice! Bulbasaur is always ready to grow on you!\n";
+        break;
+
+    case 3:
+        cout << "Professor Oak: Splendid! Squirtle will keep you cool under pressure\n";
+        break;
+
+    default:
+        cout << "Professor Oak: Hmm, that doesn't seem right. Let me choose for you...\n";
+        cout << "Professor Oak: Just kidding! Let's go with Pikachu, the surprise guest!\n";
+        break;
+
+        return 0;
+    }
 }
-
 
 
 
@@ -61,7 +64,8 @@ int main() {
     cout << "=======================================================\n";
 
 
-    selectPokemon();
+   
+    firstPokemonSelectionS();
 
     return 0;
 }
