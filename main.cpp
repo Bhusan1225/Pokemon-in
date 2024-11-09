@@ -7,7 +7,9 @@ int firstPokemonSelectionS()
 {
     cout << "Hyyyyyyyyy.... I am Professor Oak.\n";
     cout << "You can choose one of the following Pokémon:\n";
-    cout << "1. Bulbasaur\n2. Charmander\n3. Squirtle\n";
+    cout << "1. Charmander - The fire type. A real hothead!\n";
+    cout << "2. Bulbasaur - The grass type. Calm and collected!\n";
+    cout << "3. Squirtle - The water type. Cool as a cucumber!\n";
     cout << "Which Pokémon would you like to choose? Enter the number: ";
 
     int choice;
