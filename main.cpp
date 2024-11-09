@@ -14,29 +14,42 @@ int firstPokemonSelectionS()
 
     int choice;
     cin >> choice;
+    string chosen_pokemon;
 
 
-    switch (choice)
-    {
+    switch (choice) {
     case 1:
+        chosen_pokemon = "Charmander";
         cout << "Professor Oak: A fiery choice! Charmander is yours!\n";
         break;
 
     case 2:
-        cout << "Professor Oak: A fine choice! Bulbasaur is always ready to grow on you!\n";
+        chosen_pokemon = "Bulbasaur";
+        cout << "Professor Oak: A fine choice! Bulbasaur is always ready to "
+            "grow on you!\n";
         break;
 
     case 3:
-        cout << "Professor Oak: Splendid! Squirtle will keep you cool under pressure\n";
+        chosen_pokemon = "Squirtle";
+        cout << "Professor Oak: Splendid! Squirtle will keep you cool under "
+            "pressure!\n";
         break;
 
     default:
-        cout << "Professor Oak: Hmm, that doesn't seem right. Let me choose for you...\n";
-        cout << "Professor Oak: Just kidding! Let's go with Pikachu, the surprise guest!\n";
+        cout << "Professor Oak: Hmm, that doesn't seem right. Let me choose "
+            "for you...\n";
+        chosen_pokemon = "Pikachu"; // Default if no valid choice is made
+        cout << "Professor Oak: Just kidding! Let's go with Pikachu, the "
+            "surprise guest!\n";
         break;
-
-        return 0;
     }
+
+    // Concluding the first chapter
+    cout << "Professor Oak: " << chosen_pokemon << " and you,\n";
+    cout << "Professor Oak: Your journey begins now! Get ready to explore "
+        "the vast world of Pokemon!\n";
+
+    return 0;
 }
 
 
