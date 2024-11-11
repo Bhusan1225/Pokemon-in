@@ -11,10 +11,23 @@ enum class PokemonChoice
 
 };
 
+enum class PokemonType
+{
+    fireType,
+    grassType,
+    waterType,
+    currentType
+    
+
+};
+
+
+
+
 int main() {
     string player_name;
     PokemonChoice chosen_pokemon = PokemonChoice::Pikachu;
-    
+    PokemonType chosen_pokemonType = PokemonType::currentType;
 
 
     cout << "Enter your name: ";
@@ -54,19 +67,19 @@ int main() {
     switch(choice) {
         case 1:
             chosen_pokemon = PokemonChoice::Charmander;
-            
+            chosen_pokemonType = PokemonType::fireType;
             break;
         case 2:
             chosen_pokemon = PokemonChoice::Bulbasaur;
-            
+            chosen_pokemonType = PokemonType::grassType;
             break;
         case 3:
             chosen_pokemon = PokemonChoice::Squirtle;
-            
+            chosen_pokemonType = PokemonType::waterType;
             break;
         default:
             chosen_pokemon = PokemonChoice::Pikachu;
-            
+            chosen_pokemonType = PokemonType::currentType;
             break;
     }
 
