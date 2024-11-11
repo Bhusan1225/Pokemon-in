@@ -3,6 +3,7 @@ using namespace std;
 
 
 
+
 class Pokemon 
 {
 public:
@@ -27,7 +28,7 @@ public:
 
 class Player
 {
-    string Name;
+    string player_name;
     int health;
     Pokemon p_chosenPokemon;
 
@@ -86,6 +87,7 @@ class Player
 
 
 int main() {
+    
     string player_name;
 
     cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
