@@ -35,7 +35,7 @@ class Player
     void choosePokemon(int choice)
     {
         //pokemon choice logic 
-        //copy paste from main function- Feature_1_Pokemon_Selection branch
+        
         switch (choice) {
         case 1:
             chosen_pokemon = PokemonChoice::Charmander;
@@ -115,6 +115,12 @@ int main() {
 
     cout << "Professor Oak: You must be eager to start your adventure. But "
         "first, you’ll need a Pokemon of your own!\n";
+
+    // Concluding the first chapter
+    cout << "Professor Oak: " << (chosen_pokemon == PokemonChoice::Charmander ? "Charmander" : chosen_pokemon == PokemonChoice::Bulbasaur ? "Bulbasaur" : chosen_pokemon == PokemonChoice::Squirtle ? " Squirtle" : "Pikachu")
+        << " and you, " << player_name << ", are going to be the best of friends!\n";
+    cout << "Professor Oak: Your journey begins now! Get ready to explore the vast world of Pokemon!\n";
+
 
 
     return 0;
