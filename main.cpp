@@ -1,6 +1,31 @@
 #include <iostream>
 using namespace std;
 
+
+
+class Pokemon 
+{
+public:
+    string name;
+    PokemonType type;
+    int health;
+
+    // Created 2 constructors
+    Pokemon() {
+
+    }
+
+    Pokemon(string p_name, PokemonType p_type, int p_health) {
+        name = p_name;
+        type = p_type;
+        health = p_health;
+    }
+
+
+    void attack() { cout << name << "attacks with a powerful move!\n"; }
+};
+
+
 int main() {
     string player_name;
 
