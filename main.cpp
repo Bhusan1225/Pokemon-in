@@ -64,7 +64,7 @@ int main() {
     cin >> choice;
 
     // Map the integer choice to the corresponding enum value
-    switch(choice) {
+   /* switch(choice) {
         case 1:
             chosen_pokemon = PokemonChoice::Charmander;
             chosen_pokemonType = PokemonType::fireType;
@@ -109,7 +109,7 @@ int main() {
         cout << "Professor Oak: Just kidding! Let's go with Pikachu, the "
             "surprise guest!\n";
         break;
-    }
+    }*/
 
     // Concluding the first chapter
     cout << "Professor Oak: " << (chosen_pokemon == PokemonChoice::Charmander ? "Charmander" : chosen_pokemon == PokemonChoice::Bulbasaur ? "Bulbasaur" : chosen_pokemon == PokemonChoice::Squirtle ? " Squirtle":"Pikachu")
