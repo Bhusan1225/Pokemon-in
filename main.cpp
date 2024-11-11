@@ -59,7 +59,7 @@ class Player
     void choosePokemon(int choice)
     { 
         PokemonChoice chosen_pokemon = PokemonChoice::Pikachu;
-        PokemonType chosen_pokemonType = PokemonType::currentType;
+        PokemonType chosen_pokemonType = PokemonType::current;
         //pokemon choice logic 
 
         cout << "Professor Oak: So, which one will it be? Enter the number of your choice: ";
