@@ -25,6 +25,18 @@ public:
     void attack() { cout << name << "attacks with a powerful move!\n"; }
 };
 
+class Player
+{
+    string Name;
+    int health;
+    Pokemon p_chosenPokemon;
+
+    void choosePokemon(int choice)
+    {
+        //pokemon choice logic
+    }
+};
+
 
 int main() {
     string player_name;
