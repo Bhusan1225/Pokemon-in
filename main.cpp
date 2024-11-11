@@ -33,7 +33,54 @@ class Player
 
     void choosePokemon(int choice)
     {
-        //pokemon choice logic
+        //pokemon choice logic 
+        //copy paste from main function- Feature_1_Pokemon_Selection branch
+        switch (choice) {
+        case 1:
+            chosen_pokemon = PokemonChoice::Charmander;
+            chosen_pokemonType = PokemonType::fireType;
+            break;
+        case 2:
+            chosen_pokemon = PokemonChoice::Bulbasaur;
+            chosen_pokemonType = PokemonType::grassType;
+            break;
+        case 3:
+            chosen_pokemon = PokemonChoice::Squirtle;
+            chosen_pokemonType = PokemonType::waterType;
+            break;
+        default:
+            chosen_pokemon = PokemonChoice::Pikachu;
+            chosen_pokemonType = PokemonType::currentType;
+            break;
+        }
+
+
+        switch (chosen_pokemon) {
+        case PokemonChoice::Charmander:
+
+            cout << "Professor Oak: A fiery choice! Charmander is yours!\n";
+            break;
+
+        case PokemonChoice::Bulbasaur:
+
+            cout << "Professor Oak: A fine choice! Bulbasaur is always ready to "
+                "grow on you!\n";
+            break;
+
+        case PokemonChoice::Squirtle:
+
+            cout << "Professor Oak: Splendid! Squirtle will keep you cool under "
+                "pressure!\n";
+            break;
+
+        default:
+            cout << "Professor Oak: Hmm, that doesn't seem right. Let me choose "
+                "for you...\n";
+            chosen_pokemon = PokemonChoice::Pikachu;
+            cout << "Professor Oak: Just kidding! Let's go with Pikachu, the "
+                "surprise guest!\n";
+            break;
+        }
     }
 };
 
