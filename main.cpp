@@ -105,13 +105,13 @@ int main() {
 
     // Creating Objects of ProfessorOak, Pokemon and Player class
     ProfessorOak professor;
-    Pokemon pokemon;
+    Pokemon placeholderPokemon;
     Player player;
 
     //Assigning Values to placeholderPokemon attributes
-    pokemon.name = "Pikachu";
-    pokemon.type = PokemonType::ELECTRIC;
-    pokemon.health = 40;
+    placeholderPokemon.name = "Pikachu";
+    placeholderPokemon.type = PokemonType::ELECTRIC;
+    placeholderPokemon.health = 40;
 
     //Assigning Values to player attributes
     player.name = "Trainer";
