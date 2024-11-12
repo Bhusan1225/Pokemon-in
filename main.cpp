@@ -38,7 +38,7 @@ public:
     }
 
     // Method to simulate attacking (just for demonstration)
-    void attack() { std::cout << name << "attacks with a powerful move!\n"; }
+    void attack() { std::cout << name << "attacks with a powerful move!\n"; }//done
 };
 
 // Player class definition
