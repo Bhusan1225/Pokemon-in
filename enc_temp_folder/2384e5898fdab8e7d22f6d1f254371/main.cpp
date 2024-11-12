@@ -119,9 +119,6 @@ int main() {
     //Assigning Values to ProfessorOak attributes
     professor.name = "Professor Oak";
 
-    cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
-    cout << "       <<<<Welcome to the world of Pokemon!>>>>" << endl;
-    cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n";
     // Greet the player and offer Pokemon choices 
     professor.greetPlayer(player);
     professor.offerPokemonChoices(player);
