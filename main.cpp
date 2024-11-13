@@ -16,6 +16,7 @@ enum class PokemonType {
     GRASS,
     WATER,
     ELECTRIC
+    ,NORMAL
 };
 
 // Pokemon class definition
@@ -26,12 +27,13 @@ public:
     PokemonType type;
     int health;
 
-    // Created 2 constructors
+    // Created 2 constructors   
     Pokemon() {
-        name = "Pikachu";
-        type = PokemonType::ELECTRIC;
-        health = 10;
-    }
+    name = "Unknown";
+    type = PokemonType::NORMAL;
+    health = 50;
+}
+   
 
     Pokemon(string p_name, PokemonType p_type, int p_health) {
         name = p_name;
@@ -39,8 +41,20 @@ public:
         health = p_health;
     }
 
+    //copy constructor
+    Pokemon(const Pokemon& other) {
+        name = other.name;
+        type = other.type;
+        health = other.health;
+    }
+
+    // Destructor
+    ~Pokemon() {
+        // Destructor message removed
+    }
+
     // Method to simulate attacking (just for demonstration)
-    void attack() { std::cout << name << "attacks with a powerful move!\n"; }//done
+    void attack() { cout << name << "attacks with a powerful move!\n"; }
 };
 
 // Player class definition
@@ -86,6 +100,11 @@ class ProfessorOak {
     // Attributes
 public:
     string name;
+
+    ProfessorOak(string p_name) {
+        name = p_name;
+    }
+
 
     // Method to greet the player
     void greetPlayer(Player& player) {
@@ -150,21 +169,10 @@ public:
 
 int main() {
 
-    // Creating Objects of ProfessorOak, Pokemon and Player class
-    ProfessorOak professor;
-    Pokemon pokemon;
-    Player player;
-
-    //Assigning Values to placeholderPokemon attributes
-    pokemon.name = "Pikachu";
-    pokemon.type = PokemonType::ELECTRIC;
-    pokemon.health = 40;
-
-    //Assigning Values to player attributes
-    player.name = "Trainer";
-
-    //Assigning Values to ProfessorOak attributes
-    professor.name = "Professor Oak";
+    // Creating Objects of ProfessorOak, Pokemon and Player class// Using parameterized constructor
+    Pokemon charmander("Charmander", PokemonType::FIRE, 100); 
+    ProfessorOak professor("Professor Oak");
+    Player player("Ash", charmander);
 
     cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
     cout << "       <<<<Welcome to the world of Pokemon!>>>>" << endl;
@@ -174,13 +182,9 @@ int main() {
     professor.greetPlayer(player);
     professor.offerPokemonChoices(player);
 
-    // Conclude the first chapter 
-    cout << "Professor Oak: " << player.chosenPokemon.name << " and you, " << player.name << ", are going to be the best of friends!\n";
-    cout << "Professor Oak: Your journey begins now! Get ready to explore the vast world of Pokemon!\n";
-
+    //explains the main quest
     professor.explainMainQuest(player);
 
-    //till here the updates are....github_desktop
     //branch checking...
     //branch checking...
     return 0;
