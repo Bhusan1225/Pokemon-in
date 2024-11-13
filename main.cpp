@@ -28,7 +28,9 @@ public:
 
     // Created 2 constructors
     Pokemon() {
-
+        name = "Pikachu";
+        type = PokemonType::ELECTRIC;
+        health = 10;
     }
 
     Pokemon(string p_name, PokemonType p_type, int p_health) {
@@ -38,7 +40,7 @@ public:
     }
 
     // Method to simulate attacking (just for demonstration)
-    void attack() { std::cout << name << "attacks with a powerful move!\n"; }
+    void attack() { std::cout << name << "attacks with a powerful move!\n"; }//done
 };
 
 // Player class definition
@@ -47,6 +49,17 @@ public:
     // Attributes
     string name;
     Pokemon chosenPokemon;
+
+    Player() {
+        name = "Trainer";
+        chosenPokemon = Pokemon(); // Using the default Pokemon constructor 
+        cout << "A new player named " << name << " has been created!\n";
+    }
+
+    Player(string p_name, Pokemon p_chosenPokemon) {
+        name = p_name;
+        chosenPokemon = p_chosenPokemon;
+    }
 
     // Method to choose a Pokemon
     void choosePokemon(int choice) {
@@ -105,13 +118,13 @@ int main() {
 
     // Creating Objects of ProfessorOak, Pokemon and Player class
     ProfessorOak professor;
-    Pokemon placeholderPokemon;
+    Pokemon pokemon;
     Player player;
 
     //Assigning Values to placeholderPokemon attributes
-    placeholderPokemon.name = "Pikachu";
-    placeholderPokemon.type = PokemonType::ELECTRIC;
-    placeholderPokemon.health = 40;
+    pokemon.name = "Pikachu";
+    pokemon.type = PokemonType::ELECTRIC;
+    pokemon.health = 40;
 
     //Assigning Values to player attributes
     player.name = "Trainer";
@@ -131,6 +144,7 @@ int main() {
     cout << "Professor Oak: Your journey begins now! Get ready to explore the vast world of Pokemon!\n";
 
     //till here the updates are....github_desktop
+    //branch checking...
     return 0;
 
 }
