@@ -1,5 +1,9 @@
 #include<iostream>
 #include<string>
+
+#include "PokemonType.hpp"
+#include "PokemonChoice.hpp"
+
 using namespace std;
 
 
@@ -29,22 +33,8 @@ void waitForEnter()
 
 
 
-// Define an enum for Pokemon choices
-enum class PokemonChoice {
-    CHARMANDER = 1,
-    BULBASAUR,
-    SQUIRTLE,
-    PIKACHU // Default choice
-};
 
-// Define an enum for Pokemon types
-enum class PokemonType {
-    FIRE,
-    GRASS,
-    WATER,
-    ELECTRIC
-    ,NORMAL
-};
+
 
 // Pokemon class definition
 class Pokemon {
