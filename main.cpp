@@ -2,12 +2,13 @@
 #include<string>
 using namespace std;
 
-// Function to wait for user to press Enter
-void waitForEnter() 
-{
-    cin.get();    // Wait for Enter key
-}
 
+void title() 
+{
+    cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
+    cout << "       <<<<Welcome to the world of Pokemon!>>>>" << endl;
+    cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n";
+}
 void clearConsole() {
     // Platform-specific clear console command
 #ifdef _WIN32
@@ -16,6 +17,16 @@ void clearConsole() {
     (void)system("clear");
 #endif
 }
+
+// Function to wait for user to press Enter
+void waitForEnter() 
+{
+    cout << "press ENTER";
+    cin.get();    // Wait for Enter key
+ 
+}
+
+
 
 
 // Define an enum for Pokemon choices
@@ -259,15 +270,16 @@ void gameLoop(Player& player) {
 }
 
 int main() {
+    
+    title();
+
 
     // Creating Objects of ProfessorOak, Pokemon and Player class// Using parameterized constructor
     Pokemon charmander("Charmander", PokemonType::FIRE, 100); 
     ProfessorOak professor("Professor Oak");
     Player player("Ash", charmander);
 
-    cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
-    cout << "       <<<<Welcome to the world of Pokemon!>>>>" << endl;
-    cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n";
+   
     
     // Greet the player and offer Pokemon choices 
     professor.greetPlayer(player);
