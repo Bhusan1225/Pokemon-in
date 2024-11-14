@@ -1,5 +1,8 @@
 #include "Player.hpp"
+#include "PokemonType.hpp"
+#include "PokemonChoice.hpp"
 #include "iostream"
+#include "Utility.hpp"
 using namespace std;
 
 Player::Player() {
@@ -30,3 +33,4 @@ void Player::choosePokemon(int choice) {
     cout << "Player " << name << " chose " << chosenPokemon.name << "!\n";
     Utility::waitForEnter(); // Wait for user to press Enter before proceeding
 }
+
