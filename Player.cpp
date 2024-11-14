@@ -1,9 +1,11 @@
 #include "Player.hpp"
+
+#include "Pokemon.hpp"//not in the Outscal code
 #include "PokemonType.hpp"
 #include "PokemonChoice.hpp"
-#include "Pokemon.hpp"
-#include "iostream"
+
 #include "Utility.hpp"
+#include "iostream"
 using namespace std;
 
 Player::Player() {
