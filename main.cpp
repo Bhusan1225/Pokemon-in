@@ -1,86 +1,14 @@
 #include "PokemonChoice.hpp"
 #include "PokemonType.hpp"
 #include "Utility.hpp"
+#include "Pokemon.hpp"
 
 #include <iostream>
 #include <limits> // Include this header to use numeric_limits
 #include <string>
 using namespace std;
 
-// Pokemon class definition
-class Pokemon {
-public:
-    string name;
-    PokemonType type;
-    int health;
-
-    // Default constructor
-    Pokemon() {
-        name = "Unknown";
-        type = PokemonType::NORMAL;
-        health = 50;
-    }
-
-    // Parameterized constructor
-    Pokemon(string p_name, PokemonType p_type, int p_health) {
-        name = p_name;
-        type = p_type;
-        health = p_health;
-    }
-
-    // Copy constructor
-    Pokemon(const Pokemon& other) {
-        name = other.name;
-        type = other.type;
-        health = other.health;
-    }
-
-    // Destructor
-    ~Pokemon() {
-        // Destructor message removed
-    }
-
-    void attack() { cout << name << " attacks with a powerful move!\n"; }
-};
-
 #include "Player.hpp"
-// Player class definition
-//class Player {
-//public:
-//    string name;
-//    Pokemon chosenPokemon;
-//
-//    // Default constructor
-//    Player() {
-//        name = "Trainer";
-//        chosenPokemon = Pokemon(); // Using the default Pokemon constructor
-//    }
-//
-//    // Parameterized constructor
-//    Player(string p_name, Pokemon p_chosenPokemon) {
-//        name = p_name;
-//        chosenPokemon = p_chosenPokemon;
-//    }
-//
-//    void choosePokemon(int choice) {
-//        switch ((PokemonChoice)choice) {
-//        case PokemonChoice::CHARMANDER:
-//            chosenPokemon = Pokemon("Charmander", PokemonType::FIRE, 100);
-//            break;
-//        case PokemonChoice::BULBASAUR:
-//            chosenPokemon = Pokemon("Bulbasaur", PokemonType::GRASS, 100);
-//            break;
-//        case PokemonChoice::SQUIRTLE:
-//            chosenPokemon = Pokemon("Squirtle", PokemonType::WATER, 100);
-//            break;
-//        default:
-//            chosenPokemon = Pokemon("Pikachu", PokemonType::ELECTRIC, 100);
-//            break;
-//        }
-//        cout << "Player " << name << " chose " << chosenPokemon.name << "!\n";
-//        Utility::waitForEnter(); // Wait for user to press Enter before proceeding
-//    }
-//};
 
 // ProfessorOak class definition
 class ProfessorOak {
@@ -90,7 +18,7 @@ public:
     // Parameterized constructor
     ProfessorOak(string p_name) { name = p_name; }
 
-    void greetPlayer(Player & player) {
+    void greetPlayer(Player& player) {
         cout << name << ": Hello there! Welcome to the world of Pokemon!\n";
         cout << name
             << ": My name is Oak. People call me the Pokemon Professor!\n";
@@ -98,18 +26,18 @@ public:
         Utility::waitForEnter();
     }
 
-    void offerPokemonChoices(Player & player) {
+    void offerPokemonChoices(Player& player) {
         cout
             << name
             << ": First, tell me, what’s your name? \t [Please Enter Your Name]\n";
         getline(cin, player.name);
         cout << name << ": Ah, " << player.name << "! What a fantastic name!\n";
-        cout << name<< ": You must be eager to start your adventure. But first, "
-"you’ll need a Pokemon of your own!\n";
+        cout << name << ": You must be eager to start your adventure. But first, "
+            "you’ll need a Pokemon of your own!\n";
         Utility::waitForEnter();
 
         // Presenting Pokemon choices
-        cout<< name<< ": I have three Pokemon here with me. They’re all quite feisty!\n";
+        cout << name << ": I have three Pokemon here with me. They’re all quite feisty!\n";
         Utility::waitForEnter();
         cout << name << ": Choose wisely...\n";
         cout << "1. Charmander - The fire type. A real hothead!\n";
@@ -117,7 +45,7 @@ public:
         cout << "3. Squirtle - The water type. Cool as a cucumber!\n";
 
         int choice;
-        cout<< name<< ": So, which one will it be? Enter the number of your choice: ";
+        cout << name << ": So, which one will it be? Enter the number of your choice: ";
         cin >> choice;
 
         player.choosePokemon(choice);
@@ -144,14 +72,14 @@ public:
             << player.name
             << ": Wait... that sounds a lot like every other Pokémon game "
             "out there...\n";
-                cout << "Professor Oak: Shhh! Don't break the fourth wall, "
+        cout << "Professor Oak: Shhh! Don't break the fourth wall, "
             << player.name << "! This is serious business!\n";
         Utility::waitForEnter();
 
         cout << "\nProfessor Oak: To achieve this, you’ll need to battle wild "
             "Pokémon, challenge gym leaders, and of course, keep your "
             "Pokémon healthy at the PokeCenter.\n";
-            cout << "Professor Oak: Along the way, you'll capture new Pokémon to "
+        cout << "Professor Oak: Along the way, you'll capture new Pokémon to "
             "strengthen your team. Just remember—there’s a limit to how "
             "many Pokémon you can carry, so choose wisely!\n";
         Utility::waitForEnter();
