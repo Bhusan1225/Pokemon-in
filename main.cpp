@@ -1,7 +1,7 @@
 #include "PokemonChoice.hpp"
 #include "PokemonType.hpp"
 #include "Utility.hpp"
-#include "Player.hpp"
+
 #include <iostream>
 #include <limits> // Include this header to use numeric_limits
 #include <string>
@@ -43,6 +43,7 @@ public:
     void attack() { cout << name << " attacks with a powerful move!\n"; }
 };
 
+#include "Player.hpp"
 // Player class definition
 //class Player {
 //public:
@@ -89,7 +90,7 @@ public:
     // Parameterized constructor
     ProfessorOak(string p_name) { name = p_name; }
 
-    void greetPlayer(Player& player) {
+    void greetPlayer(Player & player) {
         cout << name << ": Hello there! Welcome to the world of Pokemon!\n";
         cout << name
             << ": My name is Oak. People call me the Pokemon Professor!\n";
@@ -97,7 +98,7 @@ public:
         Utility::waitForEnter();
     }
 
-    void offerPokemonChoices(Player& player) {
+    void offerPokemonChoices(Player & player) {
         cout
             << name
             << ": First, tell me, what’s your name? \t [Please Enter Your Name]\n";
