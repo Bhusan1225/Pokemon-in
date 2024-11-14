@@ -19,6 +19,7 @@ Player::Player(string p_name, Pokemon p_chosenPokemon) {
 }
 
 void Player::choosePokemon(int choice) {
+    
     switch ((PokemonChoice)choice) {
     case PokemonChoice::CHARMANDER:
         chosenPokemon = Pokemon("Charmander", PokemonType::FIRE, 100);
