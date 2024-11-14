@@ -1,6 +1,6 @@
 #include "Player.hpp"
 
-#include "Pokemon.hpp"//not in the Outscal code
+
 #include "PokemonType.hpp"
 #include "PokemonChoice.hpp"
 
