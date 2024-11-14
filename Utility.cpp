@@ -12,6 +12,7 @@ void Utility::clearConsole() {
 }
 
 void Utility::waitForEnter() {
+    cout << "\npress enter - for continue";
     cin.get();
 }
 
