@@ -181,6 +181,11 @@ void gameLoop(Player& player) {
 }
 
 int main() {
+
+    cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
+    cout << "                    Pokémon Nexus                  " << endl;
+    cout << "        Unite the Worlds, Unleash the Legends." << endl;
+    cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n";
     // Create Pokemon and Player objects for the game
     Pokemon charmander("Charmander", PokemonType::FIRE,
         100); // Using parameterized constructor
