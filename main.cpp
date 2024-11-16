@@ -3,7 +3,7 @@
 #include "PokemonChoice.hpp"
 #include "PokemonType.hpp"
 #include "ProfessorOak.hpp"
-//#include "Utility.hpp"//removed by my own
+#include "Utility.hpp"
 #include <iostream>
 #include <limits> // Include this header to use std::numeric_limits
 #include <string>

@@ -1,4 +1,6 @@
+#pragma once
 #include "Game.hpp"
+#include "BattleManager.hpp"
 #include "Player.hpp"
 #include "PokemonType.hpp"
 #include "Utility.hpp"
@@ -46,9 +48,7 @@ void Game::gameLoop(Player& player) {
             break;
         }
         case 2: {
-            cout << "You head to the PokeCenter.\n";
-            player.chosenPokemon.heal(); // Heal the player's Pokémon
-            cout << player.chosenPokemon.name << "'s health is fully restored!\\n";
+            visitPokeCenter(player);
             break;
         }
         case 3: {
@@ -86,3 +86,15 @@ void Game::gameLoop(Player& player) {
     cout << "Goodbye, " << player.name << "! Thanks for playing!\n";
 }
 
+void Game::visitPokeCenter(Player& player) {
+    if (player.chosenPokemon.health == player.chosenPokemon.maxHealth) {
+        cout << "Your Pokémon is already at full health!\n";
+    }
+    else {
+        cout << "You head to the PokeCenter.\n";
+        cout << "Healing your Pokémon...\n";
+        Utility::waitForEnter(); // Simulate a short pause for the healing process
+        player.chosenPokemon.heal(); // Heal the player's Pokémon
+        cout << player.chosenPokemon.name << "'s health is fully restored!\n";
+    }
+}

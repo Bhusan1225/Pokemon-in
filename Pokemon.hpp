@@ -8,6 +8,7 @@ public:
     PokemonType type;
     int health;
     int maxHeath;
+    int attackPower
 
 
     // Default constructor
@@ -21,4 +22,5 @@ public:
     bool isFainted()const;
 
     void attack();
+    void heal(); //Method to restore HP to max
 };
