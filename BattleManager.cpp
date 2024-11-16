@@ -24,12 +24,18 @@ void BattleManager::battle() {
             battleState.playerPokemon->attack(*battleState.wildPokemon);
         }
         else {
-            // Wild Pokï¿½mon's turn to attack
+            // Wild Pokémon's turn to attack
             battleState.wildPokemon->attack(*battleState.playerPokemon);
         }
 
         // Update the battle state after the turn
         updateBattleState();
+
+        // Switch turns
+        battleState.playerTurn = !battleState.playerTurn;
+
+        Utility::waitForEnter();
+    }
 
     handleBattleOutcome();
 }
@@ -38,7 +44,7 @@ void BattleManager::handleBattleOutcome(Player& player, bool playerWon)
 {
 	if (playerWon == true)
 	{
-		cout << player.chosenPokemon.name << "is victorious! Keep an eye on your Pokï¿½mon's health.\n";
+		cout << player.chosenPokemon.name << "is victorious! Keep an eye on your Pokémon's health.\n";
 
 	}
 	else {
