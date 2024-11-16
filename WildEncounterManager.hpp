@@ -2,8 +2,11 @@
 struct Grass;
 class Pokemon;
 
-class WildEncounterManager {
-public:
-    WildEncounterManager();
-    Pokemon getRandomPokemonFromGrass(const Grass& grass);
-};
+using namespace N_battle {
+
+    class WildEncounterManager {
+    public:
+        WildEncounterManager();
+        Pokemon getRandomPokemonFromGrass(const Grass& grass);
+    };
+}
