@@ -4,11 +4,15 @@
 using namespace std;
 
 // Default constructor
-Pokemon::Pokemon() : name("Unknown"), type(PokemonType::NORMAL), health(50) {}
+Pokemon::Pokemon()
+{
+    name = "Unknown"; type = PokemonType::NORMAL; health = 50,maxHealth=100;
+}
+
 
 // Parameterized constructor
-Pokemon::Pokemon(string p_name, PokemonType p_type, int p_health)
-    : name(p_name), type(p_type), health(p_health) 
+Pokemon::Pokemon(string p_name, PokemonType p_type, int p_health, int p_attackPower)
+    : name(p_name), type(p_type), health(p_health), attackPower(p_attackPower)
 
 {
 }

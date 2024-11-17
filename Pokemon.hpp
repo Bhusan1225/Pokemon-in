@@ -1,26 +1,23 @@
+#pragma once
 #include <string>
 using namespace std;
-enum PokemonType;//forward declaration 
+
+enum class PokemonType;
 
 class Pokemon {
 public:
     string name;
     PokemonType type;
     int health;
-    int maxHeath;
-    int attackPower
+    int maxHealth=100;
+    int attackPower;
 
-
-    // Default constructor
     Pokemon();
+    Pokemon(string p_name, PokemonType p_type, int p_health, int p_attackPower);
+    //Pokemon(const Pokemon& other);
 
-    // Parameterized constructor
-    Pokemon(string p_name, PokemonType p_type, int p_health);
-
-
+    bool isFainted() const;
+    void heal();
+    void attack(Pokemon& target);
     void takeDamage(int damage);
-    bool isFainted()const;
-
-    void attack();
-    void heal(); //Method to restore HP to max
 };

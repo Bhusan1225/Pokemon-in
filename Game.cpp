@@ -11,9 +11,9 @@ using namespace std;
 Game::Game() {
     // Create a sample grass environment with actual Pokemon objects
     forestGrass = { "Forest",
-                   {Pokemon("Pidgey", PokemonType::NORMAL, 40),
-                    Pokemon("Caterpie", PokemonType::BUG, 35),
-                    Pokemon("Zubat", PokemonType::POISON, 30)},
+                   {Pokemon("Pidgey", PokemonType::NORMAL, 40, 10),
+                    Pokemon("Caterpie", PokemonType::BUG, 35, 10),
+                    Pokemon("Zubat", PokemonType::POISON, 30,10)},
                    70 };
 }
 
@@ -21,6 +21,9 @@ void Game::gameLoop(Player& player) {
 
     int choice;
     bool keepPlaying = true;
+    BattleManager battleManager;
+    WildEncounterManager encounterManager;
+    Pokemon wildPokemon;
 
     while (keepPlaying) {
         // Clear console before showing options
@@ -44,6 +47,7 @@ void Game::gameLoop(Player& player) {
             // Create a scope within case 1
             WildEncounterManager encounterManager;
             Pokemon encounteredPokemon =encounterManager.getRandomPokemonFromGrass(forestGrass);
+            cout << encounteredPokemon.name << " appeared!!" << endl;
             battleManager.startBattle(player, wildPokemon);
             break;
         }
