@@ -7,9 +7,6 @@ public:
     string name;
     PokemonType type;
     int health;
-    int maxHeath;
-    int attackPower
-
 
     // Default constructor
     Pokemon();
@@ -17,10 +14,11 @@ public:
     // Parameterized constructor
     Pokemon(string p_name, PokemonType p_type, int p_health);
 
+    // Copy constructor
+    Pokemon(const Pokemon& other);
 
-    void takeDamage(int damage);
-    bool isFainted()const;
+    // Destructor
+    ~Pokemon();
 
     void attack();
-    void heal(); //Method to restore HP to max
 };

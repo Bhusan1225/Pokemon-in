@@ -8,7 +8,6 @@
 #include <limits> // Include this header to use std::numeric_limits
 #include <string>
 
-
 int main() {
 
 	// Continue with the main flow of the game
