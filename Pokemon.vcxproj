@@ -132,6 +132,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Pokemon.cpp" />
+    <ClCompile Include="ProfessorOak.cpp" />
     <ClCompile Include="Utility.cpp" />
     <ClCompile Include="WildEncounterManager.cpp" />
   </ItemGroup>
@@ -144,6 +145,7 @@
     <ClInclude Include="Pokemon.hpp" />
     <ClInclude Include="PokemonChoice.hpp" />
     <ClInclude Include="PokemonType.hpp" />
+    <ClInclude Include="ProfessorOak.hpp" />
     <ClInclude Include="Utility.hpp" />
     <ClInclude Include="WildEncounterManager.hpp" />
   </ItemGroup>
