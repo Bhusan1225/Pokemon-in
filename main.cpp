@@ -10,11 +10,11 @@
 
 int main() {
 
-	/*cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
+	cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
 	cout << "                    Pokémon Nexus                  " << endl;
 	cout << "        Unite the Worlds, Unleash the Legends." << endl;
-	cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n";*/
-	// Continue with the main flow of the game
+	cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n";
+	// Continue with the main flow of the games
 	ProfessorOak professor("Professor Oak");
 	Player player;
 
@@ -30,7 +30,6 @@ int main() {
 	game.gameLoop(player);
 
 	//checking branch main 
-
 
 	return 0;
 }
