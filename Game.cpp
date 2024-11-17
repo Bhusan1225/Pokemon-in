@@ -1,4 +1,6 @@
+#pragma once
 #include "Game.hpp"
+#include "BattleManager.hpp"
 #include "Player.hpp"
 #include "PokemonType.hpp"
 #include "Utility.hpp"
@@ -9,9 +11,9 @@ using namespace std;
 Game::Game() {
     // Create a sample grass environment with actual Pokemon objects
     forestGrass = { "Forest",
-                   {Pokemon("Pidgey", PokemonType::NORMAL, 40),
-                    Pokemon("Caterpie", PokemonType::BUG, 35),
-                    Pokemon("Zubat", PokemonType::POISON, 30)},
+                   {Pokemon("Pidgey", PokemonType::NORMAL, 40, 7),
+                    Pokemon("Caterpie", PokemonType::BUG, 35, 5),
+                    Pokemon("Zubat", PokemonType::POISON, 30, 8)},
                    70 };
 }
 
@@ -19,6 +21,9 @@ void Game::gameLoop(Player& player) {
 
     int choice;
     bool keepPlaying = true;
+    BattleManager battleManager;
+    WildEncounterManager encounterManager;
+    Pokemon wildPokemon;
 
     while (keepPlaying) {
         // Clear console before showing options
@@ -40,15 +45,12 @@ void Game::gameLoop(Player& player) {
         switch (choice) {
         case 1: {
             // Create a scope within case 1
-            WildEncounterManager encounterManager;
-            Pokemon encounteredPokemon =
-                encounterManager.getRandomPokemonFromGrass(forestGrass);
-            cout << "A wild " << encounteredPokemon.name << " appeared!\n";
+            wildPokemon = encounterManager.getRandomPokemonFromGrass(forestGrass);
+            battleManager.startBattle(player, wildPokemon);
             break;
         }
         case 2: {
-            cout << "You head to the PokeCenter, but Nurse Joy is out on a coffee "
-                "break. Guess your Pokémon will have to tough it out for now!\n";
+            visitPokeCenter(player);
             break;
         }
         case 3: {
@@ -84,4 +86,17 @@ void Game::gameLoop(Player& player) {
     }
 
     cout << "Goodbye, " << player.name << "! Thanks for playing!\n";
+}
+
+void Game::visitPokeCenter(Player& player) {
+    if (player.chosenPokemon.health == player.chosenPokemon.maxHealth) {
+        cout << "Your Pokémon is already at full health!\n";
+    }
+    else {
+        cout << "You head to the PokeCenter.\n";
+        cout << "Healing your Pokémon...\n";
+        Utility::waitForEnter(); // Simulate a short pause for the healing process
+        player.chosenPokemon.heal(); // Heal the player's Pokémon
+        cout << player.chosenPokemon.name << "'s health is fully restored!\n";
+    }
 }
