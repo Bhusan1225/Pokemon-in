@@ -8,4 +8,7 @@ private:
 public:
 	Game();
 	void gameLoop(Player& player);
+	void visitPokeCenter(Player& player);
 };
+	
+
