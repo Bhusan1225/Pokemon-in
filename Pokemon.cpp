@@ -5,7 +5,8 @@
 using namespace std;
 
 // Default constructor
-Pokemon::Pokemon() {
+Pokemon::Pokemon() 
+{
     name = "Unknown";
     type = PokemonType::NORMAL;
     health = 50;
@@ -15,7 +16,8 @@ Pokemon::Pokemon() {
 
 // Parameterized constructor
 Pokemon::Pokemon(string p_name, PokemonType p_type, int p_health,
-    int p_attackPower) {
+    int p_attackPower) 
+{
     name = p_name;
     type = p_type;
     maxHealth = p_health;
@@ -33,7 +35,8 @@ Pokemon::Pokemon(const Pokemon& other) {
 }
 
 // Reduce HP by the damage amount
-void Pokemon::takeDamage(int damage) {
+void Pokemon::takeDamage(int damage) 
+{
     health -= damage;
     if (health < 0) {
         health = 0;
