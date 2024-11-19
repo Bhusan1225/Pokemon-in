@@ -127,8 +127,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Balbasaur.cpp" />
     <ClCompile Include="BattleManager.cpp" />
     <ClCompile Include="Caterpie.cpp" />
+    <ClCompile Include="Charmander.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Pidgey.cpp" />
@@ -136,14 +138,17 @@
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Pokemon.cpp" />
     <ClCompile Include="ProfessorOak.cpp" />
+    <ClCompile Include="Squirtle.cpp" />
     <ClCompile Include="Utility.cpp" />
     <ClCompile Include="WildEncounterManager.cpp" />
     <ClCompile Include="Zubat.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Balbasaur.hpp" />
     <ClInclude Include="BattleManager.hpp" />
     <ClInclude Include="BattleState.hpp" />
     <ClInclude Include="Caterpie.hpp" />
+    <ClInclude Include="Charmander.hpp" />
     <ClInclude Include="Game.hpp" />
     <ClInclude Include="grass.hpp" />
     <ClInclude Include="Pidgey.hpp" />
@@ -153,6 +158,7 @@
     <ClInclude Include="PokemonChoice.hpp" />
     <ClInclude Include="PokemonType.hpp" />
     <ClInclude Include="ProfessorOak.hpp" />
+    <ClInclude Include="Squirtle.hpp" />
     <ClInclude Include="Utility.hpp" />
     <ClInclude Include="WildEncounterManager.hpp" />
     <ClInclude Include="Zubat.hpp" />

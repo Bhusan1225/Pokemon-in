@@ -5,7 +5,7 @@ using namespace std;
 enum class PokemonType;
 
 class Pokemon {
-public:
+protected:
     string name;
     PokemonType type;
     int health;
