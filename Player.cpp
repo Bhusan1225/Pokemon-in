@@ -8,27 +8,26 @@ using namespace std;
 
 Player::Player() {
     name = "Trainer";
-    chosenPokemon = new Pokemon(); // Using the default Pokemon constructor
+    
 }
 
 Player::Player(string p_name, Pokemon* p_chosenPokemon) {
     name = p_name;
-    chosenPokemon = p_chosenPokemon;
-}
+   }
 
 void Player::choosePokemon(int choice) {
     switch ((PokemonChoice)choice) {
     case PokemonChoice::CHARMANDER:
-        chosenPokemon = new Pokemon("Charmander", PokemonType::FIRE, 100, 10);
+        chosenPokemon = new Charmander();
         break;
     case PokemonChoice::BULBASAUR:
-        chosenPokemon = new Pokemon("Bulbasaur", PokemonType::GRASS, 100, 8);
+        chosenPokemon = new Balbasaur();
         break;
     case PokemonChoice::SQUIRTLE:
-        chosenPokemon = new Pokemon("Squirtle", PokemonType::WATER, 100, 9);
+        chosenPokemon = new Squirtle(); 
         break;
     default:
-        chosenPokemon = new Pokemon("Pikachu", PokemonType::ELECTRIC, 100, 12);
+        chosenPokemon = new Pikachu();  
         break;
     }
     cout << "Player " << name << " chose " << chosenPokemon->name << "!\n";

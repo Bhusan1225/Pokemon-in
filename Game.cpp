@@ -11,6 +11,7 @@ using namespace std;
 Game::Game() {
     // Create a sample grass environment with actual Pokemon objects
     forestGrass = { "Forest", {new Pidgey(), new Caterpie(), new Zubat()}, 70 };
+    delete(wildPokemon);
 }
 
 void Game::gameLoop(Player* player) {
@@ -19,7 +20,7 @@ void Game::gameLoop(Player* player) {
     bool keepPlaying = true;
     BattleManager* battleManager = new BattleManager();
     WildEncounterManager* encounterManager = new WildEncounterManager();
-    Pokemon wildPokemon = new Pokemon();
+   
 
     while (keepPlaying) {
         // Clear console before showing options
