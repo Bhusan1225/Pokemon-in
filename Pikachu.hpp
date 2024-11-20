@@ -4,9 +4,7 @@ using namespace std;
 
 class Pikachu : public Pokemon 
 {
-private:
-    void thunderShock(Pokemon* target);
-
-public:
+    public:
     Pikachu();
+    void attack(Pokemon* target) override;
 };

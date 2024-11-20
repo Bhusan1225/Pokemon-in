@@ -6,7 +6,7 @@
         class Zubat : public Pokemon {
         public:
             Zubat();
-            void supersonic(Pokemon* target);
+            void attack(Pokemon* target) override;
         };
 
     

@@ -3,11 +3,11 @@
 
 
         class Squirtle : public Pokemon {
-        private:
-            void waterSplash(Pokemon& target);
+            
 
         public:
             Squirtle();
+            void attack(Pokemon* target) override;
 
         };
 
