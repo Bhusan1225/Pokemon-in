@@ -2,18 +2,10 @@
 #include "PokemonType.hpp"
 #include <iostream>
 
-Charmander::Charmander()
-{
+Charmander::Charmander() : Pokemon("Charmander", PokemonType::FIRE, 100, 35) {}
 
-	name = "Charmander", 
-    type = PokemonType::FIRE; 
-    maxHealth = 100;
-    attackPower = 35;
-	
-}
-
-void Charmander::flameThrower(Pokemon& target)
+void Charmander::flameThrower(Pokemon* target)
 {
-    cout << name << " uses Flame Thrower on " << target.name << "!\n";
-    target.takeDamage(20);
+    cout << name << " uses Flame Thrower on " << target->name << "!\n";
+    target->takeDamage(20);
 }

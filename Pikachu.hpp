@@ -5,7 +5,7 @@ using namespace std;
 class Pikachu : public Pokemon 
 {
 private:
-    void thunderShock(Pokemon& target);
+    void thunderShock(Pokemon* target);
 
 public:
     Pikachu();

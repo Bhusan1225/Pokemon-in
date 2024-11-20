@@ -26,12 +26,12 @@ Pokemon::Pokemon(string p_name, PokemonType p_type, int p_health,
 }
 
 // Copy constructor
-Pokemon::Pokemon(const Pokemon& other) {
-    name = other.name;
-    type = other.type;
-    health = other.health;
-    maxHealth = other.maxHealth;
-    attackPower = other.attackPower;
+Pokemon::Pokemon(const Pokemon* other) {
+    name = other->name;
+    type = other->type;
+    health = other->health;
+    maxHealth = other->maxHealth;
+    attackPower = other->attackPower;
 }
 
 // Reduce HP by the damage amount
@@ -50,8 +50,9 @@ bool Pokemon::isFainted() const { return health <= 0; }
 void Pokemon::heal() { health = maxHealth; }
 
 // Attack another Pokemon
-void Pokemon::attack(Pokemon& target) {
-    cout << name << " attacks " << target.name << " for " << attackPower
+void Pokemon::attack(Pokemon* target) 
+{
+    cout << name << " attacks " << target->name << " for " << attackPower
         << " damage!\n";
-    target.takeDamage(attackPower);
+    target->takeDamage(attackPower);
 }

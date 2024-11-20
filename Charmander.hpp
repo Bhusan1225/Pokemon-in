@@ -6,7 +6,7 @@
 
         class Charmander : public Pokemon {
         private:
-            void flameThrower(Pokemon& target);
+            void flameThrower(Pokemon* target);
 
         public:
             Charmander();

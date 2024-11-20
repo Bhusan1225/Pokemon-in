@@ -8,9 +8,9 @@ using namespace std;
 
 Pikachu::Pikachu() : Pokemon("Pikachu", PokemonType::ELECTRIC, 100, 20) {}
 
-void Pikachu::thunderShock(Pokemon& target) 
+void Pikachu::thunderShock(Pokemon* target) 
 {
-            cout << name << " uses Thunder Shock on " << target.name << "!\n";
-            target.takeDamage(20);
+            cout << name << " uses Thunder Shock on " << target->name << "!\n";
+            target->takeDamage(20);
 }
  

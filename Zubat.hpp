@@ -4,11 +4,9 @@
 
 
         class Zubat : public Pokemon {
-        private:
-            void supersonic(Pokemon& target);
-
         public:
             Zubat();
+            void supersonic(Pokemon* target);
         };
 
     
