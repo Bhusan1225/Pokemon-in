@@ -6,13 +6,10 @@
 
 
         using namespace std;
-
+// Pokemon(string p_name, PokemonType p_type, int p_health, vector<Move>);
         Zubat::Zubat()
-            : Pokemon("Zubat", PokemonType::POISON, 85, {
-                Move("BITE", 18),
-                Move("LEECH LIFE", 10)
-                }) {
-        }
+            : Pokemon("Zubat", PokemonType::POISON, 85, {Move("BITE", 18), Move("LEECH LIFE", 10)}) 
+        {}
 
         void Zubat::attack(Move selectedMove, Pokemon* target)
         {

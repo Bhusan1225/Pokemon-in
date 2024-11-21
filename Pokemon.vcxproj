@@ -138,7 +138,6 @@
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Pokemon.cpp" />
     <ClCompile Include="ProfessorOak.cpp" />
-    <ClCompile Include="Snipp.cpp" />
     <ClCompile Include="Squirtle.cpp" />
     <ClCompile Include="Utility.cpp" />
     <ClCompile Include="WildEncounterManager.cpp" />
@@ -161,7 +160,6 @@
     <ClInclude Include="PokemonChoice.hpp" />
     <ClInclude Include="PokemonType.hpp" />
     <ClInclude Include="ProfessorOak.hpp" />
-    <ClInclude Include="Snipp.hpp" />
     <ClInclude Include="Squirtle.hpp" />
     <ClInclude Include="Utility.hpp" />
     <ClInclude Include="WildEncounterManager.hpp" />
