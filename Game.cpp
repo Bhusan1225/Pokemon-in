@@ -1,18 +1,18 @@
-#pragma once
 #include "Game.hpp"
 #include "BattleManager.hpp"
-#include "Player.hpp"
-#include "PokemonType.hpp"
-#include "Utility.hpp"
 #include "WildEncounterManager.hpp"
+#include "Player.hpp"
+#include "Caterpie.hpp"
+#include "Pidgey.hpp"
+#include "Zubat.hpp"
+#include "Utility.hpp"
 #include <iostream>
 using namespace std;
 
 Game::Game() {
     // Create a sample grass environment with actual Pokemon objects
     forestGrass = { "Forest", {new Pidgey(), new Caterpie(), new Zubat()}, 70 };
-    delete(wildPokemon);
-}
+    }
 
 void Game::gameLoop(Player* player) {
 
@@ -97,3 +97,8 @@ void Game::visitPokeCenter(Player* player) {
         cout << player->chosenPokemon->name << "'s health is fully restored!\n";
     }
 }
+    Game::~Game()
+    {
+        delete(wildPokemon);
+    }
+    

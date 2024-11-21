@@ -5,12 +5,13 @@
 #include <ctime>   // For time()
 
 WildEncounterManager::WildEncounterManager() {
-	srand(time(0)); // Seed the random number generator
+    srand(time(0)); // Seed the random number generator
 }
 
-Pokemon *WildEncounterManager::getRandomPokemonFromGrass(const Grass& grass) {
-	int randomIndex = rand() % grass.wildPokemonList.size();
-	Pokemon* wildPokemon = grass.wildPokemonList[randomIndex];
+Pokemon* WildEncounterManager::getRandomPokemonFromGrass(const Grass& grass) {
+    int randomIndex = rand() % grass.wildPokemonList.size();
 
-	return wildPokemon;
+    Pokemon* wildPokemon = grass.wildPokemonList[randomIndex];
+
+    return wildPokemon;
 }

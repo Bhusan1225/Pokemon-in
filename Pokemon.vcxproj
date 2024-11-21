@@ -151,6 +151,8 @@
     <ClInclude Include="Charmander.hpp" />
     <ClInclude Include="Game.hpp" />
     <ClInclude Include="grass.hpp" />
+    <ClInclude Include="Move.hpp" />
+    <ClInclude Include="MoveName.hpp" />
     <ClInclude Include="Pidgey.hpp" />
     <ClInclude Include="Pikachu.hpp" />
     <ClInclude Include="Player.hpp" />

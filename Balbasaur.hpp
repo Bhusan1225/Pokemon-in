@@ -1,13 +1,8 @@
 #pragma once
 #include "Pokemon.hpp"
 
-
-
-        class Balbasaur : public Pokemon {
-            
-
-        public:
-            Balbasaur();
-            void attack(Pokemon* target) override;
-        };
-
+class Bulbasaur : public Pokemon {
+public:
+    Bulbasaur();
+    void attack(Move selectedMove, Pokemon* target) override;
+};

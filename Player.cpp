@@ -1,19 +1,20 @@
-#pragma once
+#include "iostream"
 #include "Player.hpp"
 #include "PokemonChoice.hpp"
-#include "PokemonType.hpp"
+#include "Pikachu.hpp"
 #include "Utility.hpp"
-#include "iostream"
+#include "Bulbasaur.hpp"
+#include "Charmander.hpp"
+#include "Squirtle.hpp"
 using namespace std;
 
 Player::Player() {
     name = "Trainer";
-    
 }
 
-Player::Player(string p_name, Pokemon* p_chosenPokemon) {
+Player::Player(std::string p_name) {
     name = p_name;
-   }
+}
 
 void Player::choosePokemon(int choice) {
     switch ((PokemonChoice)choice) {
@@ -21,15 +22,17 @@ void Player::choosePokemon(int choice) {
         chosenPokemon = new Charmander();
         break;
     case PokemonChoice::BULBASAUR:
-        chosenPokemon = new Balbasaur();
+        chosenPokemon = new Bulbasaur();
         break;
     case PokemonChoice::SQUIRTLE:
-        chosenPokemon = new Squirtle(); 
+        chosenPokemon = new Squirtle();
         break;
     default:
-        chosenPokemon = new Pikachu();  
+        chosenPokemon = new Pikachu();
         break;
     }
-    cout << "Player " << name << " chose " << chosenPokemon->name << "!\n";
-    Utility::waitForEnter(); // Wait for user to press Enter before proceeding
+    std::cout << "Player " << name << " chose " << chosenPokemon->name << "!\n";
+    Utility::waitForEnter(); // Wait for user to press Enter before
+    // proceeding
 }
+  

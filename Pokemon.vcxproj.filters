@@ -113,6 +113,12 @@
     <ClInclude Include="Squirtle.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Move.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MoveName.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="Balbasaur.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>

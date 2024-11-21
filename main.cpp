@@ -14,25 +14,24 @@ int main() {
 	cout << "                    Pokémon Nexus                  " << endl;
 	cout << "        Unite the Worlds, Unleash the Legends." << endl;
 	cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n";
-	// Continue with the main flow of the games
-	ProfessorOak* professor = new ProfessorOak("Professor Oak");
-	Player* player = new Player();
+    // Continue with the main flow of the game
+    ProfessorOak* professor = new ProfessorOak("Professor Oak");
+    Player* player = new Player();
 
-	// Greet the player and offer Pokemon choices
-	professor->greetPlayer(player);
-	professor->offerPokemonChoices(player);
+    // Greet the player and offer Pokemon choices
+    professor->greetPlayer(player);
+    professor->offerPokemonChoices(player);
 
-	// Explain the main quest
-	professor->explainMainQuest(player);
+    // Explain the main quest
+    professor->explainMainQuest(player);
 
-	// Start the main game loop
-	Game* game = new Game();
-	game->gameLoop(player);
+    // Start the main game loop
+    Game* game = new Game();
+    game->gameLoop(player);
 
-	//checking branch main 
-	delete professor;
-	delete player;
-	delete game;
+    delete(professor);
+    delete(player);
+    delete(game);
 
-	return 0;
+    return 0;
 }

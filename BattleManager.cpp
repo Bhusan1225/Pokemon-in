@@ -4,24 +4,29 @@
 #include <iostream>
 using namespace std;
 
-void BattleManager::startBattle(Player* player, Pokemon* wildPokemon) {
+BattleState BattleManager::battleState;
+
+void BattleManager::startBattle(Player* player,Pokemon* wildPokemon) {
     battleState.playerPokemon = player->chosenPokemon;
     battleState.wildPokemon = wildPokemon;
     battleState.playerTurn = true;
     battleState.battleOngoing = true;
 
     cout << "A wild " << wildPokemon->name << " appeared!\n";
+    Utility::waitForEnter();
+
     battle();
 }
 
+void BattleManager::stopBattle() { battleState.battleOngoing = false; }
+
 void BattleManager::battle() {
-    while (battleState.battleOngoing) {
-        if (battleState.playerTurn) {
-            battleState.playerPokemon->attack(battleState.wildPokemon);
-        }
-        else {
-            battleState.wildPokemon->attack(battleState.playerPokemon);
-        }
+    while (battleState.battleOngoing)
+    {
+        if (battleState.playerTurn)
+            battleState.playerPokemon->selectAndUseMove(battleState.wildPokemon);
+        else
+            battleState.wildPokemon->selectAndUseMove(battleState.playerPokemon);
 
         updateBattleState();
         battleState.playerTurn = !battleState.playerTurn;

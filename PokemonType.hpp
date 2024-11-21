@@ -3,9 +3,9 @@ enum class PokemonType {
     FIRE,
     GRASS,
     WATER,
-    ELECTRIC, 
+    ELECTRIC,
     NORMAL,
-    POISON, //i added without any suggestion
-    ROCK, //i added without any suggestion
-    BUG //i added without any suggestion
+    POISON,
+    BUG,
+    FLYING
 };

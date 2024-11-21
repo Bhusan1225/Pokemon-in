@@ -6,10 +6,10 @@ using namespace std;
 class Player {
 public:
     string name;
-    Pokemon *chosenPokemon;
+    Pokemon* chosenPokemon;
 
     Player(); // Default constructor
-    Player(string p_name, Pokemon* p_chosenPokemon); // Parameterized constructor
+    Player(string p_name); // Parameterized constructor
 
     void choosePokemon(int choice); // Method to choose a Pokemon
 };
