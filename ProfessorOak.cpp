@@ -35,7 +35,7 @@ void ProfessorOak::offerPokemonChoices(Player* player) {
     Utility::waitForEnter();
     cout << name << ": Choose wisely...\n";
     cout << "1. Charmander - The fire type. A real hothead!\n";
-    cout << "2. Bulbasaur - The grass type. Calm and collected!\n";
+    cout << "2. Bunny - The grass type. Calm and collected!\n";
     cout << "3. Squirtle - The water type. Cool as a cucumber!\n";
 
     int choice;

@@ -1,5 +1,5 @@
 #pragma once
-#include "Pokemon.hpp";
+#include "Pokemon.hpp"
 using namespace std;
 
 class Pikachu : public Pokemon {

@@ -3,16 +3,17 @@
 #include "PokemonChoice.hpp"
 #include "Pikachu.hpp"
 #include "Utility.hpp"
-#include "Bulbasaur.hpp"
+#include "Bunny.hpp"
 #include "Charmander.hpp"
 #include "Squirtle.hpp"
 using namespace std;
 
-Player::Player() {
+Player::Player() 
+{
     name = "Trainer";
 }
 
-Player::Player(std::string p_name) {
+Player::Player(string p_name) {
     name = p_name;
 }
 
@@ -21,8 +22,8 @@ void Player::choosePokemon(int choice) {
     case PokemonChoice::CHARMANDER:
         chosenPokemon = new Charmander();
         break;
-    case PokemonChoice::BULBASAUR:
-        chosenPokemon = new Bulbasaur();
+    case PokemonChoice::BUNNY:
+        chosenPokemon = new Bunny();
         break;
     case PokemonChoice::SQUIRTLE:
         chosenPokemon = new Squirtle();

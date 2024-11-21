@@ -28,6 +28,6 @@
                 if (this->health > this->maxHealth)
                     this->health = this->maxHealth;
 
-                std::cout << "... and regained health!\n";
+                cout << "... and regained health!\n";
             }
         }

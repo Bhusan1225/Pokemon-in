@@ -26,6 +26,6 @@ using namespace std;
                     Pokemon::attack(selectedMove, target);
                 }
 
-                std::cout << "... and hit " << hits << " times!\\n";
+                cout << "... and hit " << hits << " times!\\n";
             }
         }

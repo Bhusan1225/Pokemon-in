@@ -57,7 +57,10 @@
     <ClCompile Include="Squirtle.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Balbasaur.cpp">
+    <ClCompile Include="Bunny.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Snipp.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -119,7 +122,10 @@
     <ClInclude Include="MoveName.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Balbasaur.hpp">
+    <ClInclude Include="Bunny.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Snipp.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
