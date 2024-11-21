@@ -1,9 +1,12 @@
 #include <iostream>
 #include "Pokemon.hpp"
 #include "PokemonType.hpp"
+#include "ParalyzedEffect.hpp"
 #include "Utility.hpp"
 using namespace std;
 
+
+    // Default constructor
     Pokemon::Pokemon() {
         name = "Unknown";
         type = PokemonType::NORMAL;
@@ -18,6 +21,7 @@ using namespace std;
         maxHealth = p_health;
         health = p_health;
         moves = p_moves;
+        appliedEffect = nullptr;
     }
 
     // Copy constructor
@@ -57,6 +61,31 @@ using namespace std;
         }
     }
 
+    bool Pokemon::canAttack()
+    {
+        if (appliedEffect == nullptr)
+            return true;
+        else
+            return appliedEffect->turnEndEffect(this);
+    }
+
+    bool Pokemon::canApplyEffect() { return appliedEffect == nullptr; }
+
+    void Pokemon::applyEffect(StatusEffectType effectToApply)
+    {
+        switch (effectToApply)
+        {
+        case StatusEffectType::PARALYZED:
+            appliedEffect = new ParalyzedEffect();
+            appliedEffect->applyEffect(this);
+            break;
+        default:
+            appliedEffect = nullptr;
+        }
+    }
+
+    void Pokemon::clearEffect() { appliedEffect = nullptr; }
+
     void Pokemon::printAvailableMoves()
     {
         cout << name << "'s available moves:\n";
@@ -88,10 +117,10 @@ using namespace std;
         cout << name << " used " << selectedMove.name << "!\n";
         attack(selectedMove, target);
 
-        Utility::waitForEnter();
+        N_Utility::Utility::waitForEnter();
 
         cout << "...\n";
-        Utility::waitForEnter();
+        N_Utility::Utility::waitForEnter();
 
         if (target->isFainted())
             cout << target->name << " fainted!\n";
@@ -106,4 +135,3 @@ using namespace std;
 
     // Restore health to full
     void Pokemon::heal() { health = maxHealth; }
-// namespace N_Pokemon

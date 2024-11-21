@@ -2,21 +2,26 @@
 #include <string>
 #include <vector>
 #include "Move.hpp"
-using namespace std;
+#include "IStatusEffect.hpp"
+#include "StatusEffectType.hpp"
 
-struct Move;
-enum class PokemonType;
+
+namespace N_Pokemon {
+
+    struct Move;
+    enum class PokemonType;
 
     class Pokemon {
     public:
-        string name;
+        std::string name;
         PokemonType type;
         int health;
         int maxHealth;
         vector<Move> moves; // Store the list of moves
+        IStatusEffect* appliedEffect;
 
         Pokemon();
-        Pokemon(string p_name, PokemonType p_type, int p_health, vector<Move>);
+        Pokemon(std::string p_name, PokemonType p_type, int p_health, vector<Move>);
         Pokemon(Pokemon* other);
 
         bool isFainted() const;
@@ -25,6 +30,10 @@ enum class PokemonType;
         void takeDamage(int damage);
         void selectAndUseMove(Pokemon* target);
         void reduceAttackPower(int reduced_damage);
+        bool canAttack();
+        bool canApplyEffect();
+        void applyEffect(StatusEffectType effectToApply);
+        void clearEffect();
 
     protected:
         // Base implementation for selecting and using a move
@@ -32,3 +41,4 @@ enum class PokemonType;
         int selectMove();
         void useMove(Move selectedMove, Pokemon* target);
     };
+}

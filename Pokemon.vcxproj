@@ -133,6 +133,7 @@
     <ClCompile Include="Charmander.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="ParalyzedEffect.cpp" />
     <ClCompile Include="Pidgey.cpp" />
     <ClCompile Include="Pikachu.cpp" />
     <ClCompile Include="Player.cpp" />
@@ -151,8 +152,10 @@
     <ClInclude Include="Charmander.hpp" />
     <ClInclude Include="Game.hpp" />
     <ClInclude Include="grass.hpp" />
+    <ClInclude Include="IStatusEffect.hpp" />
     <ClInclude Include="Move.hpp" />
     <ClInclude Include="MoveName.hpp" />
+    <ClInclude Include="ParalyzedEffect.hpp" />
     <ClInclude Include="Pidgey.hpp" />
     <ClInclude Include="Pikachu.hpp" />
     <ClInclude Include="Player.hpp" />
@@ -161,6 +164,7 @@
     <ClInclude Include="PokemonType.hpp" />
     <ClInclude Include="ProfessorOak.hpp" />
     <ClInclude Include="Squirtle.hpp" />
+    <ClInclude Include="StatusEffectType.hpp" />
     <ClInclude Include="Utility.hpp" />
     <ClInclude Include="WildEncounterManager.hpp" />
     <ClInclude Include="Zubat.hpp" />

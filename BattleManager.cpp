@@ -23,17 +23,19 @@ void BattleManager::stopBattle() { battleState.battleOngoing = false; }
 void BattleManager::battle() {
     while (battleState.battleOngoing)
     {
-        if (battleState.playerTurn)
-            battleState.playerPokemon->selectAndUseMove(battleState.wildPokemon);
-        else
-            battleState.wildPokemon->selectAndUseMove(battleState.playerPokemon);
+        {
+            while (battleState.battleOngoing)
+            {
+                if (battleState.playerTurn && battleState.playerPokemon->canAttack())
+                    battleState.playerPokemon->selectAndUseMove(battleState.wildPokemon);
+                else if (battleState.wildPokemon->canAttack())
+                    battleState.wildPokemon->selectAndUseMove(battleState.playerPokemon);
 
-        updateBattleState();
-        battleState.playerTurn = !battleState.playerTurn;
-        Utility::waitForEnter();
-    }
-
-    handleBattleOutcome();
+                updateBattleState();
+                battleState.playerTurn = !battleState.playerTurn;
+                Utility::waitForEnter();
+            }
+            handleBattleOutcome();
 }
 
 void BattleManager::updateBattleState() {
