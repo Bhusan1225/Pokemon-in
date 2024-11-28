@@ -32,6 +32,7 @@ void Player::choosePokemon(int choice) {
         chosenPokemon = new Pikachu();
         break;
     }
+    
     std::cout << "Player " << name << " chose " << chosenPokemon->name << "!\n";
     Utility::waitForEnter(); // Wait for user to press Enter before
     // proceeding
