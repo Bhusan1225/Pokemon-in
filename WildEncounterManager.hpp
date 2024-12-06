@@ -1,4 +1,4 @@
-
+#pragma once
 struct Grass;
 class Pokemon;
 
