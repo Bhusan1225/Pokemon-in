@@ -6,7 +6,7 @@
 #include "StatusEffectType.hpp"
 
 
-namespace N_Pokemon {
+
 
     struct Move;
     enum class PokemonType;
@@ -41,4 +41,3 @@ namespace N_Pokemon {
         int selectMove();
         void useMove(Move selectedMove, Pokemon* target);
     };
-}

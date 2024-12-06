@@ -117,10 +117,10 @@ using namespace std;
         cout << name << " used " << selectedMove.name << "!\n";
         attack(selectedMove, target);
 
-        N_Utility::Utility::waitForEnter();
+       Utility::waitForEnter();
 
         cout << "...\n";
-        N_Utility::Utility::waitForEnter();
+        Utility::waitForEnter();
 
         if (target->isFainted())
             cout << target->name << " fainted!\n";

@@ -2,57 +2,57 @@
 #include "Player.hpp"
 #include "Utility.hpp"
 #include <iostream>
-using namespace std;
 
-BattleState BattleManager::battleState;
 
-void BattleManager::startBattle(Player* player,Pokemon* wildPokemon) {
-    battleState.playerPokemon = player->chosenPokemon;
-    battleState.wildPokemon = wildPokemon;
-    battleState.playerTurn = true;
-    battleState.battleOngoing = true;
 
-    cout << "A wild " << wildPokemon->name << " appeared!\n";
-    Utility::waitForEnter();
+    BattleState BattleManager::battleState;
 
-    battle();
-}
+    void BattleManager::startBattle(Player* player, Pokemon* wildPokemon) {
+        battleState.playerPokemon = player->chosenPokemon;
+        battleState.wildPokemon = wildPokemon;
+        battleState.playerTurn = true;
+        battleState.battleOngoing = true;
 
-void BattleManager::stopBattle() { battleState.battleOngoing = false; }
+        cout << "A wild " << wildPokemon->name << " appeared!\n";
+        Utility::waitForEnter();
 
-void BattleManager::battle() {
-    while (battleState.battleOngoing)
+        battle();
+    }
+
+    void BattleManager::stopBattle() { battleState.battleOngoing = false; }
+
+    void BattleManager::battle()
     {
+        while (battleState.battleOngoing)
         {
-            while (battleState.battleOngoing)
-            {
-                if (battleState.playerTurn && battleState.playerPokemon->canAttack())
-                    battleState.playerPokemon->selectAndUseMove(battleState.wildPokemon);
-                else if (battleState.wildPokemon->canAttack())
-                    battleState.wildPokemon->selectAndUseMove(battleState.playerPokemon);
+            if (battleState.playerTurn && battleState.playerPokemon->canAttack())
+                battleState.playerPokemon->selectAndUseMove(battleState.wildPokemon);
+            else if (battleState.wildPokemon->canAttack())
+                battleState.wildPokemon->selectAndUseMove(battleState.playerPokemon);
 
-                updateBattleState();
-                battleState.playerTurn = !battleState.playerTurn;
-                Utility::waitForEnter();
-            }
-            handleBattleOutcome();
-}
+            updateBattleState();
+            battleState.playerTurn = !battleState.playerTurn;
+            Utility::waitForEnter();
+        }
 
-void BattleManager::updateBattleState() {
-    if (battleState.playerPokemon->isFainted()) {
-        battleState.battleOngoing = false;
+        handleBattleOutcome();
     }
-    else if (battleState.wildPokemon->isFainted()) {
-        battleState.battleOngoing = false;
-    }
-}
 
-void BattleManager::handleBattleOutcome() {
-    if (battleState.playerPokemon->isFainted()) {
-        cout << battleState.playerPokemon->name
-            << " has fainted! You lose the battle.\n";
+    void BattleManager::updateBattleState() {
+        if (battleState.playerPokemon->isFainted()) {
+            battleState.battleOngoing = false;
+        }
+        else if (battleState.wildPokemon->isFainted()) {
+            battleState.battleOngoing = false;
+        }
     }
-    else {
-        cout << "You defeated the wild " << battleState.wildPokemon->name << "!\n";
-    }
-}
+
+    void BattleManager::handleBattleOutcome() {
+        if (battleState.playerPokemon->isFainted()) {
+            cout << battleState.playerPokemon->name
+                << " has fainted! You lose the battle.\n";
+        }
+        else {
+            cout << "You defeated the wild " << battleState.wildPokemon->name << "!\n";
+        }
+ 

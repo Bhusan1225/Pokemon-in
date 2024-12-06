@@ -33,6 +33,8 @@ void Game::gameLoop(Player* player) {
         cout << "3. Challenge Gyms\n";
         cout << "4. Enter Pokémon League\n";
         cout << "5. Quit\n";
+
+        //enter your choice
         cout << "Enter your choice: ";
         cin >> choice;
 
